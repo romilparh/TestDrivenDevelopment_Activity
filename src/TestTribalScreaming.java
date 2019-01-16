@@ -21,4 +21,10 @@ class TestTribalScreaming {
 		TribalScreaming s = new TribalScreaming();
 		assertEquals("You is amazing",s.scream(null));
 	}
+	
+	@Test
+	void testScreamNameUC() {
+		TribalScreaming s = new TribalScreaming();
+		assertEquals("PETER IS AMAZING",s.scream("PETER"));
+	}
 }
