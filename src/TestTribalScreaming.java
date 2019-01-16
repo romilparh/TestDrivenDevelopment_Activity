@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 class TestTribalScreaming {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testScream() {
+		TribalScreaming s = new TribalScreaming();
+		assertEquals("Peter is amazing",s.scream("Peter"));
 	}
 
 }
