@@ -31,4 +31,10 @@ class TestTribalScreaming {
 		  assertEquals("You is amazing",s.scream(name));
 		}
 	
+	@Test
+	void testScreamOneName() {
+		  TribalScreaming s = new TribalScreaming();
+		  String [] name = {"Romil"};
+		  assertEquals("Romil is amazing",s.scream(name));
+		}
 }
