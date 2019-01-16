@@ -1,19 +1,30 @@
 
 public class TribalScreaming {
+	
+	public static String connector = ", ";
+	public static String connectorAnd = " and ";
 
-	public String scream(String name) {
+	public String scream(String[] name) {
 		if(name == null) {
 			return "You is amazing";
+		} else {
+			String nameString = "";
+			if(name.length == 2) {
+				for(int i=0;i<name.length;i++) {
+					if(i ==0) {
+						nameString = nameString.concat(name[i]);
+					} else {
+						nameString = nameString.concat(this.connectorAnd + name[i]);
+					}
+				}
+				System.out.println(nameString + " are amazing");
+				return nameString + " are amazing";
+			} else {
+				return "";
+			}
+			
 		}
-		else if(name.length()<1){
-			return "You is amazing";
-		}
-		else if(isUpperCase(name)){
-			return name + " IS AMAZING";
-		}
-		else {
-			return name + " is amazing";
-		}
+		
 	}
 	
 	// FUNCTION TO CHECK IF STRING IS UPPERCASED OR NOT
@@ -29,8 +40,4 @@ public class TribalScreaming {
 	    return true;
 	}
 	
-	public static void main(String ar[]) {
-		TribalScreaming s = new TribalScreaming();
-		System.out.print(s.scream("PETER"));
-	}
 }

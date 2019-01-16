@@ -7,13 +7,8 @@ class TestTribalScreaming {
 	@Test
 	void testScreamName() {
 		TribalScreaming s = new TribalScreaming();
-		assertEquals("Peter is amazing",s.scream("Peter"));
-	}
-	
-	@Test
-	void testScreamEmptyName() {
-		TribalScreaming s = new TribalScreaming();
-		assertEquals("You is amazing",s.scream(""));
+		String [] names = {"Peter","Aditya"};
+		assertEquals("Peter and Aditya are amazing",s.scream(names));
 	}
 
 	@Test
@@ -22,9 +17,4 @@ class TestTribalScreaming {
 		assertEquals("You is amazing",s.scream(null));
 	}
 	
-	@Test
-	void testScreamNameUC() {
-		TribalScreaming s = new TribalScreaming();
-		assertEquals("PETER IS AMAZING",s.scream("PETER"));
-	}
 }
