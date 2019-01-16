@@ -5,10 +5,17 @@ import org.junit.jupiter.api.Test;
 class TestTribalScreaming {
 
 	@Test
-	void testScreamName() {
+	void testScreamTwoNames() {
 		TribalScreaming s = new TribalScreaming();
 		String [] names = {"Peter","Aditya"};
 		assertEquals("Peter and Aditya are amazing",s.scream(names));
+	}
+	
+	@Test
+	void testScreamMoreNames() {
+		TribalScreaming s = new TribalScreaming();
+		String [] names = {"Peter","Aditya","Satya"};
+		assertEquals("Peter, Aditya and Satya are amazing",s.scream(names));
 	}
 
 	@Test
@@ -16,5 +23,12 @@ class TestTribalScreaming {
 		TribalScreaming s = new TribalScreaming();
 		assertEquals("You is amazing",s.scream(null));
 	}
+	
+	@Test
+	void testScreamEmptyName() {
+		  TribalScreaming s = new TribalScreaming();
+		  String [] name = {""};
+		  assertEquals("You is amazing",s.scream(name));
+		}
 	
 }

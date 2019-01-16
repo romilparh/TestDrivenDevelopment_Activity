@@ -3,26 +3,38 @@ public class TribalScreaming {
 	
 	public static String connector = ", ";
 	public static String connectorAnd = " and ";
+	public static String you = "You";
 
 	public String scream(String[] name) {
 		if(name == null) {
 			return "You is amazing";
 		} else {
 			String nameString = "";
-			if(name.length == 2) {
 				for(int i=0;i<name.length;i++) {
-					if(i ==0) {
-						nameString = nameString.concat(name[i]);
+					if(name[i]=="") {
+						if(i == 0) {
+							nameString = nameString.concat(you);
+						} else if(i== name.length -1 ){
+							nameString = nameString.concat(this.connectorAnd + you);
+						} else {
+							nameString = nameString.concat(this.connector + you);
+						}
 					} else {
-						nameString = nameString.concat(this.connectorAnd + name[i]);
+						if(i == 0) {
+							nameString = nameString.concat(name[i]);
+						} else if(i== name.length -1 ){
+							nameString = nameString.concat(this.connectorAnd + name[i]);
+						} else {
+							nameString = nameString.concat(this.connector + name[i]);
+						}
 					}
 				}
-				System.out.println(nameString + " are amazing");
-				return nameString + " are amazing";
-			} else {
-				return "";
-			}
-			
+				if(name.length == 1) {
+					return nameString + " is amazing";
+				} else {
+					return nameString + " are amazing";
+				}
+				
 		}
 		
 	}
